@@ -30,10 +30,19 @@ export const signUser = async ({ email, password }: IAuth) => {
       email,
       password
     );
-    console.log(result);
-    return result;
+
+    return result.user;
   } catch (e) {
     console.error("Inicio de sesion fallido", e.code);
+    return e.code;
+  }
+};
+export const signOutUser = async () => {
+  try {
+    await auth.signOut();
+    console.log("Sesion cerrada");
+  } catch (e) {
+    console.error("Sesion cerrada fallido", e.code);
     return e.code;
   }
 };

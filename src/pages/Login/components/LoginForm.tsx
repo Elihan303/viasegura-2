@@ -22,8 +22,18 @@ export const LoginForm = () => {
       pass: "",
     },
     onSubmit: async (values) => {
-      await signUser({ email: values.email, password: values.pass });
+      if (!values.email && !values.pass) {
+        console.log("Campos vacios");
+        return;
+      }
+      const user = await signUser({
+        email: values.email,
+        password: values.pass,
+      });
       formik.resetForm();
+      if (user) {
+        navigation("/home", { state: { email: user.email } });
+      }
     },
   });
   return (
