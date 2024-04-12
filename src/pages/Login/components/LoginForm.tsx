@@ -32,7 +32,7 @@ export const LoginForm = () => {
       });
       formik.resetForm();
       if (user) {
-        navigation("/home", { state: { email: user.email } });
+        navigation("/inicio", { state: { email: user.email } });
       }
     },
   });

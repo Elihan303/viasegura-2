@@ -1,11 +1,7 @@
-import { Login } from "./pages/Login";
+import { Routers } from "./router";
 
 function App() {
-  return (
-    <>
-      <Login />
-    </>
-  );
+  return <Routers />;
 }
 
 export default App;

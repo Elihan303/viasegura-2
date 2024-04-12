@@ -31,6 +31,7 @@ const Register = () => {
     }
     await createUser({ email: values.email, password: values.pass2 });
     formik.resetForm();
+    navigate("/");
   };
 
   return (
