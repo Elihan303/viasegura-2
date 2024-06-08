@@ -30,7 +30,7 @@ export const signUser = async ({ email, password }: IAuth) => {
       email,
       password
     );
-
+    console.log(result.user);
     return result.user;
   } catch (e) {
     console.error("Inicio de sesion fallido", e.code);

@@ -1,7 +1,4 @@
-import { Flex } from "@chakra-ui/react";
-
-import { GenericTable } from "./components/GenericTable";
-
+import { Flex, Heading } from "@chakra-ui/react";
 import ToggleColorMode from "../../components/ToggleTheme.tsx";
 import { Navbar } from "../../components/Navbar/index.tsx";
 
@@ -25,7 +22,7 @@ const Home = () => {
           overflow="auto"
           minH="100vh"
         >
-          <GenericTable />
+          <Heading>Bienvenido</Heading>
         </Flex>
       </Flex>
     </>

@@ -1,5 +1,5 @@
 import { Avatar, Flex, Heading, Icon, Link, Text } from "@chakra-ui/react";
-import { FiHome, FiBook, FiLogOut, FiInfo } from "react-icons/fi";
+import { FiLogOut, FiUser, FiTruck, FiStopCircle } from "react-icons/fi";
 import { signOutUser } from "../../firebase/auth/auth";
 import { useNavigate } from "react-router";
 
@@ -38,43 +38,19 @@ export const Navbar = () => {
             wrap={["wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
             justifyContent="center"
           >
-            <Flex
-              className="sidebar-items"
-              mr={[2, 6, 0, 0, 0]}
-              onClick={() => navigation("/inicio")}
-            >
+            <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]} marginTop={5}>
               <Flex
                 justifyContent={"center"}
                 alignItems={"center"}
                 marginRight={2}
               >
-                <Icon as={FiHome} fontSize="xl" className="active-icon" />
+                <Icon as={FiUser} fontSize="xl" className="active-icon" />
               </Flex>
               <Link
                 _hover={{ textDecor: "none" }}
                 display={["flex", "flex", "none", "flex", "flex"]}
               >
-                <Text className="active">Inicio</Text>
-              </Link>
-            </Flex>
-            <Flex
-              className="sidebar-items"
-              mr={[2, 6, 0, 0, 0]}
-              marginTop={5}
-              onClick={() => navigation("/aprender")}
-            >
-              <Flex
-                justifyContent={"center"}
-                alignItems={"center"}
-                marginRight={2}
-              >
-                <Icon as={FiBook} fontSize="xl" className="active-icon" />
-              </Flex>
-              <Link
-                _hover={{ textDecor: "none" }}
-                display={["flex", "flex", "none", "flex", "flex"]}
-              >
-                <Text>Aprender</Text>
+                <Text onClick={() => navigation("/usuarios")}>Usuarios</Text>
               </Link>
             </Flex>
             <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]} marginTop={5}>
@@ -83,14 +59,43 @@ export const Navbar = () => {
                 alignItems={"center"}
                 marginRight={2}
               >
-                <Icon as={FiInfo} fontSize="xl" className="active-icon" />
+                <Icon as={FiTruck} fontSize="xl" className="active-icon" />
               </Flex>
-
               <Link
                 _hover={{ textDecor: "none" }}
                 display={["flex", "flex", "none", "flex", "flex"]}
               >
-                <Text>Recomendaciones</Text>
+                <Text onClick={() => navigation("/autobuses")}>Autobuses</Text>
+              </Link>
+            </Flex>
+            <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]} marginTop={5}>
+              <Flex
+                justifyContent={"center"}
+                alignItems={"center"}
+                marginRight={2}
+              >
+                <Icon as={FiLogOut} fontSize="xl" className="active-icon" />
+              </Flex>
+              <Link
+                _hover={{ textDecor: "none" }}
+                display={["flex", "flex", "none", "flex", "flex"]}
+              >
+                <Text onClick={() => navigation("/rutas")}>Rutas</Text>
+              </Link>
+            </Flex>
+            <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]} marginTop={5}>
+              <Flex
+                justifyContent={"center"}
+                alignItems={"center"}
+                marginRight={2}
+              >
+                <Icon as={FiStopCircle} fontSize="xl" className="active-icon" />
+              </Flex>
+              <Link
+                _hover={{ textDecor: "none" }}
+                display={["flex", "flex", "none", "flex", "flex"]}
+              >
+                <Text onClick={() => navigation("/paradas")}>Paradas</Text>
               </Link>
             </Flex>
             <Flex className="sidebar-items" mr={[2, 6, 0, 0, 0]} marginTop={5}>
