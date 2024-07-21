@@ -29,7 +29,7 @@ export const UserForm = () => {
         initialValues={initialValues}
         fields={fields}
         onSubmit={handleSubmit}
-        title={EditValue ? "Editar una parada" : "Registra una parada"}
+        title={EditValue ? "Editar una usuario" : "Registra una usuario"}
         navigationToFinish={() => navigation("/usuarios")}
       />
     </>
